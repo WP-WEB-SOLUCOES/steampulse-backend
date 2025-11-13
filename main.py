@@ -32,9 +32,9 @@ app = FastAPI(
 )
 
 # O restante do arquivo continua igual...
-app.include_router(AuthRouter, prefix="/api/auth", tags=["Autenticação"])
-app.include_router(GamesRouter, prefix="/api/games", tags=["Jogos e Biblioteca"])
-app.include_router(PaymentsRouter, prefix="/api/payments", tags=["Pagamentos"])
+app.include_router(AuthRouter, tags=["Autenticação"])
+app.include_router(GamesRouter, tags=["Jogos e Biblioteca"])
+app.include_router(PaymentsRouter, tags=["Pagamentos"])
 
 @app.get("/", tags=["Root"])
 async def read_root():
